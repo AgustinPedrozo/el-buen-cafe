@@ -1,0 +1,126 @@
+/* ======== Variables ======== */
+:root {
+  --cafe-oscuro: #3e2c23;
+  --cafe: #6f4e37;
+  --cafe-claro: #d4a373;
+  --crema: #fdf6ec;
+  --crema-form: #fff8f0;
+}
+
+/* ======== Estilos base ======== */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--crema);
+}
+
+/* ======== Encabezado ======== */
+header {
+  background-color: var(--cafe);
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* ======== Barra de navegación ======== */
+/* Variables de Bootstrap en lugar de !important */
+.navbar {
+  --bs-navbar-color: #fff;
+  --bs-navbar-hover-color: var(--cafe-claro);
+  --bs-navbar-active-color: var(--cafe-claro);
+  --bs-navbar-brand-color: #fff;
+  --bs-navbar-brand-hover-color: var(--cafe-claro);
+  --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--cafe);
+}
+
+/* El ícono del botón hamburguesa en blanco */
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* ======== Pie de página ======== */
+footer {
+  background-color: var(--cafe-oscuro);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* ======== Caja animada ======== */
+.transition-box {
+  width: 100px;
+  height: 100px;
+  background-color: var(--cafe-claro);
+  transition: transform 0.4s ease;
+  margin: 1rem 0;
+}
+
+.transition-box:hover {
+  transform: scale(1.15) rotate(8deg);
+}
+
+/* ======== Formulario ======== */
+form {
+  background: var(--crema-form);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+/* ======== Imágenes ======== */
+.mi-imagen {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ======== Carrusel de productos ======== */
+#carouselProductos {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#carouselProductos img {
+  height: 250px;        /* celulares */
+  object-fit: cover;    /* recorta sin deformar */
+}
+
+@media (min-width: 768px) {
+  #carouselProductos img {
+    height: 500px;      /* tablets y escritorio */
+  }
+}
+
+/* Texto del carrusel */
+.carousel-caption h5 {
+  color: var(--crema);
+  font-weight: bold;
+}
+
+.carousel-caption p {
+  color: #fcebd3;
+  font-size: 1rem;
+}
+
+/* Puntos indicadores */
+.carousel-indicators [data-bs-target] {
+  background-color: var(--cafe);
+}
+
+/* Flechas de navegación */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(80%) sepia(30%) saturate(200%) hue-rotate(345deg);
+}
+
+/* ======== Accesibilidad ======== */
+/* Respeta a quienes prefieren menos animaciones */
+@media (prefers-reduced-motion: reduce) {
+  .transition-box {
+    transition: none;
+  }
+}
